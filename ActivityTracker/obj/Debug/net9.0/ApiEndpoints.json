@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
+    "Method": "Save",
+    "RelativePath": "api/Activities",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ActivityTracker.Controllers.SaveActivityRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
+    "Method": "GetMyActivities",
+    "RelativePath": "api/Activities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ActivityTracker.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",

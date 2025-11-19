@@ -43,11 +43,9 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginDto loginDto)
     {
-        // Nowa logika logowania
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
         if (user != null && await _userManager.CheckPasswordAsync(user, loginDto.Password))
         {
-            // Generowanie i zwracanie tokenu JWT
             var token = await _jwtService.GenerateTokenAsync(user);
             return Ok(new LoginResponseDto { Token = token, Email = user.Email! });
         }

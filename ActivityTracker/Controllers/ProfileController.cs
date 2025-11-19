@@ -9,7 +9,7 @@ namespace ActivityTracker.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize] // Zabezpiecza wszystkie endpointy w tym kontrolerze
+[Authorize] 
 public class ProfileController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
