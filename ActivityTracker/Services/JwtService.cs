@@ -29,6 +29,7 @@ public class JwtService
         {
             new(JwtRegisteredClaimNames.Sub, user.Id),
             new(JwtRegisteredClaimNames.Email, user.Email!),
+            new(JwtRegisteredClaimNames.UniqueName, user.UserName ?? ""),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
@@ -47,4 +48,3 @@ public class JwtService
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 }
-

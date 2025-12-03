@@ -13,7 +13,6 @@ public class AuthController : ControllerBase
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly JwtService _jwtService;
 
-    
     public AuthController(UserManager<ApplicationUser> userManager, JwtService jwtService)
     {
         _userManager = userManager;
@@ -28,7 +27,26 @@ public class AuthController : ControllerBase
             return BadRequest("Passwords do not match.");
         }
 
-        var user = new ApplicationUser { UserName = registerDto.Email, Email = registerDto.Email };
+        var existingUserByName = await _userManager.FindByNameAsync(registerDto.UserName);
+        if (existingUserByName != null)
+        {
+            return BadRequest("This username is already taken.");
+        }
+
+        
+        var existingUserByEmail = await _userManager.FindByEmailAsync(registerDto.Email);
+        if (existingUserByEmail != null)
+        {
+            return BadRequest("This email is already registered.");
+        }
+
+        
+        var user = new ApplicationUser
+        {
+            UserName = registerDto.UserName, 
+            Email = registerDto.Email
+        };
+
         var result = await _userManager.CreateAsync(user, registerDto.Password);
 
         if (result.Succeeded)
@@ -43,9 +61,12 @@ public class AuthController : ControllerBase
     [HttpPost("login")]
     public async Task<IActionResult> Login(LoginDto loginDto)
     {
+        
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
+
         if (user != null && await _userManager.CheckPasswordAsync(user, loginDto.Password))
         {
+          
             var token = await _jwtService.GenerateTokenAsync(user);
             return Ok(new LoginResponseDto { Token = token, Email = user.Email! });
         }
@@ -53,4 +74,3 @@ public class AuthController : ControllerBase
         return Unauthorized("Invalid credentials.");
     }
 }
-

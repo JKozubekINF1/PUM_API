@@ -1,6 +1,7 @@
 ﻿using ActivityTracker.Data;
 using ActivityTracker.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity; 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
@@ -15,10 +16,12 @@ namespace ActivityTracker.Controllers
     public class ActivitiesController : ControllerBase
     {
         private readonly ApplicationDbContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ActivitiesController(ApplicationDbContext db)
+        public ActivitiesController(ApplicationDbContext db, UserManager<ApplicationUser> userManager)
         {
             _db = db;
+            _userManager = userManager;
         }
 
         [HttpPost]
@@ -41,8 +44,8 @@ namespace ActivityTracker.Controllers
             var activity = new Activity
             {
                 UserId = userId,
-                Title = string.IsNullOrWhiteSpace(request.Title) ? "Bez tytułu" : request.Title.Trim(),     
-                Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(), 
+                Title = string.IsNullOrWhiteSpace(request.Title) ? "Bez tytułu" : request.Title.Trim(),
+                Description = string.IsNullOrWhiteSpace(request.Description) ? null : request.Description.Trim(),
                 ActivityType = request.ActivityType ?? "Running",
                 StartedAt = DateTime.UtcNow.AddSeconds(-request.DurationSeconds),
                 EndedAt = DateTime.UtcNow,
@@ -53,42 +56,124 @@ namespace ActivityTracker.Controllers
                 RouteGeoJson = geoJson
             };
 
-            _db.Entry(activity).Property("UserId").CurrentValue = userId;
-
             _db.Activities.Add(activity);
             await _db.SaveChangesAsync();
 
             return Ok(new { Id = activity.Id, Message = "Activity saved successfully!" });
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetMyActivities()
+
+        [HttpGet("history")]
+        public async Task<IActionResult> GetHistory()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
 
             var activities = await _db.Activities
-                .Where(a => EF.Property<string>(a, "UserId") == userId)
+                .Where(a => a.UserId == userId) 
                 .OrderByDescending(a => a.StartedAt)
                 .Select(a => new
                 {
                     a.Id,
+                    a.Title,
                     a.ActivityType,
                     a.StartedAt,
                     a.DurationSeconds,
                     a.DistanceMeters,
                     a.AverageSpeedMs,
-                    a.RouteGeoJson
+
                 })
                 .ToListAsync();
 
             return Ok(activities);
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetActivityDetails(Guid id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
+            var activity = await _db.Activities
+                .Where(a => a.Id == id && a.UserId == userId) 
+                .Select(a => new
+                {
+                    a.Id,
+                    a.Title,
+                    a.Description,
+                    a.ActivityType,
+                    a.StartedAt,
+                    a.EndedAt,
+                    a.DurationSeconds,
+                    a.DistanceMeters,
+                    a.AverageSpeedMs,
+                    a.MaxSpeedMs,
+                    a.RouteGeoJson 
+                })
+                .FirstOrDefaultAsync();
+
+            if (activity == null)
+                return NotFound("Nie znaleziono aktywności.");
+
+            return Ok(activity);
+        }
+
+        [HttpGet("leaderboard")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetLeaderboard()
+        {
+            var sevenDaysAgo = DateTime.UtcNow.AddDays(-7);
+
+            var rankingData = await _db.Activities
+                .Where(a => a.StartedAt >= sevenDaysAgo)
+                .GroupBy(a => a.UserId)
+                .Select(g => new
+                {
+                    UserId = g.Key,
+                    TotalDistance = g.Sum(x => x.DistanceMeters),
+                    TotalDuration = g.Sum(x => x.DurationSeconds),
+                    ActivityCount = g.Count()
+                })
+                .OrderByDescending(x => x.TotalDistance)
+                .Take(50)
+                .ToListAsync();
+
+            var userIds = rankingData.Select(r => r.UserId).ToList();
+
+            var users = await _db.Users
+                .Where(u => userIds.Contains(u.Id))
+                .Select(u => new { u.Id, u.UserName, u.FirstName, u.LastName, u.AvatarUrl })
+                .ToDictionaryAsync(u => u.Id);
+
+            var leaderboard = rankingData.Select((r, index) => {
+                var userExists = users.TryGetValue(r.UserId, out var user);
+
+                string displayName = "Anonim";
+                if (userExists)
+                {
+                    if (!string.IsNullOrEmpty(user.FirstName))
+                        displayName = user.FirstName + (string.IsNullOrEmpty(user.LastName) ? "" : " " + user.LastName);
+                    else
+                        displayName = user.UserName ?? "Użytkownik";
+                }
+
+                return new
+                {
+                    Rank = index + 1,
+                    UserName = displayName,
+                    AvatarUrl = userExists ? user.AvatarUrl : null,
+                    TotalDistanceKm = Math.Round(r.TotalDistance / 1000.0, 2),
+                    r.ActivityCount,
+                    r.TotalDuration
+                };
+            });
+
+            return Ok(leaderboard);
+        }
     }
 
     public class SaveActivityRequest
     {
-        public string? Title { get; set; }          
-        public string? Description { get; set; }     
+        public string? Title { get; set; }
+        public string? Description { get; set; }
         public string? ActivityType { get; set; }
         public int DurationSeconds { get; set; }
         public double DistanceMeters { get; set; }

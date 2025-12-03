@@ -34,7 +34,44 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Activities/history": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Activities/{id}": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Activities/leaderboard": {
       "get": {
         "tags": [
           "Activities"
@@ -174,7 +211,8 @@
       "RegisterDto": {
         "required": [
           "email",
-          "password"
+          "password",
+          "userName"
         ],
         "type": "object",
         "properties": {
@@ -182,6 +220,11 @@
             "minLength": 1,
             "type": "string",
             "format": "email"
+          },
+          "userName": {
+            "maxLength": 50,
+            "minLength": 3,
+            "type": "string"
           },
           "password": {
             "maxLength": 100,
@@ -246,6 +289,12 @@
       "UpdateProfileDto": {
         "type": "object",
         "properties": {
+          "userName": {
+            "maxLength": 50,
+            "minLength": 3,
+            "type": "string",
+            "nullable": true
+          },
           "firstName": {
             "maxLength": 50,
             "minLength": 0,

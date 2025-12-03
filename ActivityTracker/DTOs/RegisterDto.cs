@@ -4,9 +4,15 @@ namespace ActivityTracker.DTOs
 {
     public class RegisterDto
     {
-        [Required]
+        [Required(ErrorMessage = "Email is required")]
         [EmailAddress]
         public string Email { get; set; } = string.Empty;
+
+        
+        [Required(ErrorMessage = "Username is required")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "Username must be between 3 and 50 characters.")]
+        public string UserName { get; set; } = string.Empty;
+        
 
         [Required]
         [DataType(DataType.Password)]
@@ -19,4 +25,3 @@ namespace ActivityTracker.DTOs
         public string ConfirmPassword { get; set; } = string.Empty;
     }
 }
-

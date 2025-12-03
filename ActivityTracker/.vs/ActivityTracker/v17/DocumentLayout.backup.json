@@ -3,36 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\updateprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,8 +15,60 @@
       "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:dtos\\profiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\services\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:services\\dataseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:dtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:controllers\\activitiescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:models\\activity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\data\\migrations\\20251118210945_addactivitiestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:data\\migrations\\20251118210945_addactivitiestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\data\\migrations\\20251011083559_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:data\\migrations\\20251011083559_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -58,15 +82,170 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\ProfileDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\ProfileDto.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\ProfileDto.cs",
+              "RelativeToolTip": "DTOs\\ProfileDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:58:51.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginDto.cs",
+              "RelativeToolTip": "DTOs\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T06:11:00.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T06:10:55.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T06:11:09.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginResponseDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\LoginResponseDto.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginResponseDto.cs",
+              "RelativeToolTip": "DTOs\\LoginResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T06:11:04.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\RegisterDto.cs",
+              "RelativeToolTip": "DTOs\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:58:53.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\UpdateProfileDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateProfileDto.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\UpdateProfileDto.cs",
+              "RelativeToolTip": "DTOs\\UpdateProfileDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T12:27:13.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtService.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\JwtService.cs",
+              "RelativeToolTip": "Services\\JwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T12:27:06.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DataSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\DataSeeder.cs",
+              "RelativeDocumentMoniker": "Services\\DataSeeder.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\DataSeeder.cs",
+              "RelativeToolTip": "Services\\DataSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:58:58.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T12:26:42.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ActivitiesController.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ActivitiesController.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
+              "RelativeToolTip": "Controllers\\ActivitiesController.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAcwAMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T20:50:35.163Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20251118210945_AddActivitiesTable.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\20251118210945_AddActivitiesTable.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20251118210945_AddActivitiesTable.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\20251118210945_AddActivitiesTable.cs",
+              "RelativeToolTip": "Data\\Migrations\\20251118210945_AddActivitiesTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:58:15.288Z"
             },
             {
               "$type": "Bookmark",
@@ -74,57 +253,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ActivitiesController.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ActivitiesController.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
-              "RelativeToolTip": "Controllers\\ActivitiesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T20:50:35.163Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T20:49:46.728Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Activity.cs",
               "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\Activity.cs",
               "RelativeDocumentMoniker": "Models\\Activity.cs",
               "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\Activity.cs",
               "RelativeToolTip": "Models\\Activity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T20:49:39.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAowFQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "20251011083559_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\20251011083559_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20251011083559_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\20251011083559_InitialCreate.cs",
+              "RelativeToolTip": "Data\\Migrations\\20251011083559_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T12:26:42.792Z"
+              "WhenOpened": "2025-11-19T10:58:13.345Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAkBAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T10:57:48.512Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-18T20:49:46.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -136,56 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T06:11:09.691Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAowDoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T06:10:55.512Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UpdateProfileDto.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\UpdateProfileDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\UpdateProfileDto.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\UpdateProfileDto.cs",
-              "RelativeToolTip": "DTOs\\UpdateProfileDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T12:27:13.953Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginDto.cs",
-              "RelativeToolTip": "DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T06:11:00.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -194,30 +323,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-11-13T11:34:57.178Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "JwtService.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\JwtService.cs",
-              "RelativeDocumentMoniker": "Services\\JwtService.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Services\\JwtService.cs",
-              "RelativeToolTip": "Services\\JwtService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T12:27:06.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginResponseDto.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginResponseDto.cs",
-              "RelativeDocumentMoniker": "DTOs\\LoginResponseDto.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\DTOs\\LoginResponseDto.cs",
-              "RelativeToolTip": "DTOs\\LoginResponseDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T06:11:04.187Z"
             }
           ]
         }

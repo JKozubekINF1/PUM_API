@@ -9,7 +9,7 @@ namespace ActivityTracker.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-[Authorize] 
+[Authorize]
 public class ProfileController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
@@ -40,6 +40,7 @@ public class ProfileController : ControllerBase
 
         var profileDto = new ProfileDto
         {
+            UserName = user.UserName, 
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
@@ -62,6 +63,18 @@ public class ProfileController : ControllerBase
             return NotFound("User not found.");
         }
 
+        if (!string.IsNullOrWhiteSpace(updateProfileDto.UserName) && updateProfileDto.UserName != user.UserName)
+        {
+            var existingUser = await _userManager.FindByNameAsync(updateProfileDto.UserName);
+            if (existingUser != null && existingUser.Id != user.Id)
+            {
+                return BadRequest("Ten nick jest już zajęty.");
+            }
+
+
+            user.UserName = updateProfileDto.UserName;
+        }
+        
         user.FirstName = updateProfileDto.FirstName ?? user.FirstName;
         user.LastName = updateProfileDto.LastName ?? user.LastName;
         user.DateOfBirth = updateProfileDto.DateOfBirth ?? user.DateOfBirth;
@@ -80,5 +93,3 @@ public class ProfileController : ControllerBase
         return BadRequest(result.Errors);
     }
 }
-
-

@@ -17,8 +17,34 @@
   },
   {
     "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
-    "Method": "GetMyActivities",
-    "RelativePath": "api/Activities",
+    "Method": "GetActivityDetails",
+    "RelativePath": "api/Activities/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
+    "Method": "GetHistory",
+    "RelativePath": "api/Activities/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
+    "Method": "GetLeaderboard",
+    "RelativePath": "api/Activities/leaderboard",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
