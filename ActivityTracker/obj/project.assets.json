@@ -5204,23 +5204,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tytaj\\.nuget\\packages\\": {},
+    "C:\\Users\\dayde\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
+      "projectUniqueName": "C:\\Users\\dayde\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
       "projectName": "ActivityTracker",
-      "projectPath": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
-      "packagesPath": "C:\\Users\\tytaj\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\obj\\",
+      "projectPath": "C:\\Users\\dayde\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
+      "packagesPath": "C:\\Users\\dayde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dayde\\Documents\\GitHub\\PUM_API\\ActivityTracker\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tytaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dayde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

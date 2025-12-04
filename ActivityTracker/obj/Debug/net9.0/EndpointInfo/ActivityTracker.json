@@ -121,6 +121,28 @@
         }
       }
     },
+    "/api/Admin/users/{id}": {
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Admin/activities": {
       "get": {
         "tags": [
@@ -390,6 +412,11 @@
   "components": {
     "schemas": {
       "AdminActivityDto": {
+        "required": [
+          "activityType",
+          "userId",
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -428,6 +455,23 @@
             "type": "string",
             "format": "date-time"
           },
+          "endedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "averageSpeedMs": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxSpeedMs": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -458,6 +502,11 @@
         "additionalProperties": false
       },
       "AdminUserDto": {
+        "required": [
+          "email",
+          "id",
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -487,6 +536,29 @@
           "activitiesCount": {
             "type": "integer",
             "format": "int32"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "height": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "weight": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
           }
         },
         "additionalProperties": false

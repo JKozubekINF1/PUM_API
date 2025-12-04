@@ -154,6 +154,22 @@
     ]
   },
   {
+    "ContainingType": "ActivityTracker.Controllers.AdminController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Admin/users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ActivityTracker.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
