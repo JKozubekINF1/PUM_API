@@ -13,10 +13,12 @@ namespace ActivityTracker.Controllers;
 public class ProfileController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
+    private readonly IWebHostEnvironment _environment; 
 
-    public ProfileController(UserManager<ApplicationUser> userManager)
+    public ProfileController(UserManager<ApplicationUser> userManager, IWebHostEnvironment environment)
     {
         _userManager = userManager;
+        _environment = environment;
     }
 
     private async Task<ApplicationUser?> GetCurrentUserAsync()
@@ -40,7 +42,7 @@ public class ProfileController : ControllerBase
 
         var profileDto = new ProfileDto
         {
-            UserName = user.UserName, 
+            UserName = user.UserName,
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
@@ -71,10 +73,9 @@ public class ProfileController : ControllerBase
                 return BadRequest("Ten nick jest już zajęty.");
             }
 
-
             user.UserName = updateProfileDto.UserName;
         }
-        
+
         user.FirstName = updateProfileDto.FirstName ?? user.FirstName;
         user.LastName = updateProfileDto.LastName ?? user.LastName;
         user.DateOfBirth = updateProfileDto.DateOfBirth ?? user.DateOfBirth;
@@ -91,5 +92,43 @@ public class ProfileController : ControllerBase
         }
 
         return BadRequest(result.Errors);
+    }
+
+    [HttpPost("upload-avatar")]
+    public async Task<IActionResult> UploadAvatar(IFormFile file)
+    {
+        var user = await GetCurrentUserAsync();
+        if (user == null) return NotFound("User not found.");
+
+        if (file == null || file.Length == 0)
+            return BadRequest("Nie przesłano pliku.");
+
+        var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+        var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+        if (!allowedExtensions.Contains(extension))
+            return BadRequest("Tylko pliki .jpg, .jpeg, .png są dozwolone.");
+
+        string uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "avatars");
+        if (!Directory.Exists(uploadsFolder))
+            Directory.CreateDirectory(uploadsFolder);
+
+        string uniqueFileName = $"{user.Id}_{Guid.NewGuid()}{extension}";
+        string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await file.CopyToAsync(stream);
+        }
+        var avatarUrl = $"{Request.Scheme}://{Request.Host}/uploads/avatars/{uniqueFileName}";
+
+        user.AvatarUrl = avatarUrl;
+        var result = await _userManager.UpdateAsync(user);
+
+        if (result.Succeeded)
+        {
+            return Ok(new { Url = avatarUrl, Message = "Awatar zaktualizowany." });
+        }
+
+        return BadRequest("Błąd zapisu w bazie danych.");
     }
 }

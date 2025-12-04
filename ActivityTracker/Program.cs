@@ -26,7 +26,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy => policy
-            .WithOrigins("http://localhost:5173") // Adres Frontendu
+            .WithOrigins("http://localhost:5173") 
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials()); 
@@ -147,7 +147,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowReactApp");
-
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
