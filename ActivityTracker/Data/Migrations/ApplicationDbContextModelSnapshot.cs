@@ -76,7 +76,7 @@ namespace ActivityTracker.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Activities");
+                    b.ToTable("Activities", (string)null);
                 });
 
             modelBuilder.Entity("ActivityTracker.Models.ApplicationUser", b =>

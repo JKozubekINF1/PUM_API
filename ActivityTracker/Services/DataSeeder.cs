@@ -34,7 +34,7 @@ namespace ActivityTracker.Services
                 {
                     UserName = "admin@example.com",
                     Email = "admin@example.com",
-                    EmailConfirmed = true
+                    EmailConfirmed = true,
                 };
 
                 var result = await _userManager.CreateAsync(adminUser, "AdminPassword123!");

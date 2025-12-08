@@ -11,6 +11,9 @@ using ActivityTracker.Services;
 var builder = WebApplication.CreateBuilder(args);
 var configuration = builder.Configuration;
 
+
+builder.Services.AddScoped<ActivityTracker.Services.IEmailService, ActivityTracker.Services.EmailService>();
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
@@ -26,10 +29,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy => policy
-            .WithOrigins("http://localhost:5173") 
+            .WithOrigins("http://localhost:5173", "https://srv101211.seohost.com.pl" , "http://srv101211.seohost.com.pl")
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .AllowCredentials()); 
+            .AllowCredentials());
 });
 
 builder.Services.AddAuthentication(options =>
@@ -115,7 +118,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<JwtService>();
-builder.Services.AddScoped<DataSeeder>(); 
+builder.Services.AddScoped<DataSeeder>();
 
 var app = builder.Build();
 
@@ -134,15 +137,14 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
-if (app.Environment.IsDevelopment())
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Activity Tracker API V1");
-        c.RoutePrefix = "api/documentation";
-    });
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Activity Tracker API V1");
+    c.RoutePrefix = "api/documentation";
+});
+
 
 app.UseHttpsRedirection();
 

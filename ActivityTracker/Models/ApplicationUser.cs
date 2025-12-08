@@ -12,7 +12,6 @@ public class ApplicationUser : IdentityUser
     public double? Height { get; set; } 
     public double? Weight { get; set; } 
     public string? AvatarUrl { get; set; }
-
     public virtual ICollection<Activity> Activities { get; set; } = new List<Activity>();
 }
 

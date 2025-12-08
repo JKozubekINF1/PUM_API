@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
 using NetTopologySuite.IO;
 using System.Security.Claims;
+using System.Text;
+using System.Globalization;
 
 namespace ActivityTracker.Controllers
 {
@@ -168,7 +170,65 @@ namespace ActivityTracker.Controllers
 
             return Ok(leaderboard);
         }
+
+        [HttpGet("{id}/gpx")]
+        public async Task<IActionResult> ExportGpx(Guid id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
+            var activity = await _db.Activities
+                .FirstOrDefaultAsync(a => a.Id == id && a.UserId == userId);
+
+            if (activity == null)
+            {
+                return NotFound("Nie znaleziono aktywności.");
+            }
+
+            if (string.IsNullOrEmpty(activity.RouteGeoJson))
+            {
+                return BadRequest("Ta aktywność nie posiada zapisanej trasy GPS.");
+            }
+
+            var reader = new GeoJsonReader();
+            var geometry = reader.Read<Geometry>(activity.RouteGeoJson);
+
+            var coordinates = geometry.Coordinates;
+
+            var sb = new StringBuilder();
+
+            sb.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+            sb.AppendLine("<gpx version=\"1.1\" creator=\"ActivityTrackerAPI\" xmlns=\"http://www.topografix.com/GPX/1/1\">");
+
+            sb.AppendLine("  <metadata>");
+            sb.AppendLine($"    <time>{activity.StartedAt.ToString("yyyy-MM-ddTHH:mm:ssZ")}</time>");
+            sb.AppendLine("  </metadata>");
+
+            sb.AppendLine("  <trk>");
+            sb.AppendLine($"    <name>{activity.Title ?? "Activity"}</name>");
+            sb.AppendLine($"    <type>{activity.ActivityType}</type>");
+            sb.AppendLine("    <trkseg>");
+
+            foreach (var coord in coordinates)
+            {
+                string lat = coord.Y.ToString(CultureInfo.InvariantCulture); 
+                string lon = coord.X.ToString(CultureInfo.InvariantCulture); 
+
+                sb.AppendLine($"      <trkpt lat=\"{lat}\" lon=\"{lon}\">");
+                sb.AppendLine("      </trkpt>");
+            }
+
+            sb.AppendLine("    </trkseg>");
+            sb.AppendLine("  </trk>");
+            sb.AppendLine("</gpx>");
+
+            var fileBytes = Encoding.UTF8.GetBytes(sb.ToString());
+            var fileName = $"{activity.ActivityType}_{activity.StartedAt:yyyy-MM-dd}.gpx";
+
+            return File(fileBytes, "application/gpx+xml", fileName);
+        }
     }
+
+
 
     public class SaveActivityRequest
     {
