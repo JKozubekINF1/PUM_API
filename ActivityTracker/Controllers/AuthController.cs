@@ -1,8 +1,10 @@
 ﻿using ActivityTracker.DTOs;
 using ActivityTracker.Models;
-using ActivityTracker.Services; 
+using ActivityTracker.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace ActivityTracker.Controllers;
 
@@ -69,12 +71,46 @@ public class AuthController : ControllerBase
         if (user != null && await _userManager.CheckPasswordAsync(user, loginDto.Password))
         {
             var token = await _jwtService.GenerateTokenAsync(user);
-            return Ok(new LoginResponseDto { Token = token, Email = user.Email! });
-        }
 
+            // ZWRACAMY INFORMACJĘ O KONIECZNOŚCI ZMIANY HASŁA
+            return Ok(new LoginResponseDto
+            {
+                Token = token,
+                Email = user.Email!,
+                MustChangePassword = user.MustChangePassword
+            });
+        }
         return Unauthorized("Invalid credentials.");
     }
 
+    [HttpPost("change-initial-password")]
+    [Authorize] // Musi być zalogowany (mieć token), żeby zmienić hasło
+    public async Task<IActionResult> ChangeInitialPassword([FromBody] ChangePasswordDto dto)
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var user = await _userManager.FindByIdAsync(userId!);
+
+        if (user == null) return Unauthorized();
+
+        if (!user.MustChangePassword)
+        {
+            return BadRequest("Nie musisz zmieniać hasła.");
+        }
+
+        // Generujemy token resetujący hasło (bezpieczna metoda bez podawania starego hasła, bo user jest już zalogowany)
+        var resetToken = await _userManager.GeneratePasswordResetTokenAsync(user);
+        var result = await _userManager.ResetPasswordAsync(user, resetToken, dto.NewPassword);
+
+        if (result.Succeeded)
+        {
+            // Wyłączamy wymóg zmiany hasła
+            user.MustChangePassword = false;
+            await _userManager.UpdateAsync(user);
+            return Ok(new { Message = "Hasło zostało zmienione." });
+        }
+
+        return BadRequest(result.Errors);
+    }
 
     [HttpPost("forgot-password")]
     public async Task<IActionResult> ForgotPassword(ForgotPasswordDto dto)
@@ -137,4 +173,5 @@ public class AuthController : ControllerBase
 
         return BadRequest(result.Errors);
     }
+
 }

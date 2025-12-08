@@ -187,6 +187,22 @@
   },
   {
     "ContainingType": "ActivityTracker.Controllers.AuthController",
+    "Method": "ChangeInitialPassword",
+    "RelativePath": "api/Auth/change-initial-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ActivityTracker.DTOs.ChangePasswordDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.Controllers.AuthController",
     "Method": "ForgotPassword",
     "RelativePath": "api/Auth/forgot-password",
     "HttpMethod": "POST",
