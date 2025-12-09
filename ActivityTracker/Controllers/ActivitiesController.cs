@@ -127,6 +127,7 @@ namespace ActivityTracker.Controllers
         public async Task<IActionResult> UploadActivityPhoto(Guid id, IFormFile file)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
             var activity = await _db.Activities
                 .FirstOrDefaultAsync(a => a.Id == id && a.UserId == userId);
 
@@ -141,12 +142,16 @@ namespace ActivityTracker.Controllers
             if (!allowedExtensions.Contains(extension))
                 return BadRequest("Tylko pliki .jpg, .jpeg, .png są dozwolone.");
 
-            string uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "activity-photos");
+            string rootPath = _environment.WebRootPath ?? _environment.ContentRootPath;
+
+            string uploadsFolder = Path.Combine(rootPath, _environment.WebRootPath == null ? "wwwroot" : "", "uploads", "activity-photos");
+
             if (!Directory.Exists(uploadsFolder))
                 Directory.CreateDirectory(uploadsFolder);
 
             string uniqueFileName = $"{activity.Id}_{Guid.NewGuid()}{extension}";
             string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await file.CopyToAsync(stream);
