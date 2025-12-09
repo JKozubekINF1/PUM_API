@@ -9,6 +9,8 @@ using NetTopologySuite.IO;
 using System.Security.Claims;
 using System.Text;
 using System.Globalization;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace ActivityTracker.Controllers
 {
@@ -118,58 +120,6 @@ namespace ActivityTracker.Controllers
             return Ok(activity);
         }
 
-        [HttpGet("leaderboard")]
-        [AllowAnonymous]
-        public async Task<IActionResult> GetLeaderboard()
-        {
-            var sevenDaysAgo = DateTime.UtcNow.AddDays(-7);
-
-            var rankingData = await _db.Activities
-                .Where(a => a.StartedAt >= sevenDaysAgo)
-                .GroupBy(a => a.UserId)
-                .Select(g => new
-                {
-                    UserId = g.Key,
-                    TotalDistance = g.Sum(x => x.DistanceMeters),
-                    TotalDuration = g.Sum(x => x.DurationSeconds),
-                    ActivityCount = g.Count()
-                })
-                .OrderByDescending(x => x.TotalDistance)
-                .Take(50)
-                .ToListAsync();
-
-            var userIds = rankingData.Select(r => r.UserId).ToList();
-
-            var users = await _db.Users
-                .Where(u => userIds.Contains(u.Id))
-                .Select(u => new { u.Id, u.UserName, u.FirstName, u.LastName, u.AvatarUrl })
-                .ToDictionaryAsync(u => u.Id);
-
-            var leaderboard = rankingData.Select((r, index) => {
-                var userExists = users.TryGetValue(r.UserId, out var user);
-
-                string displayName = "Anonim";
-                if (userExists)
-                {
-                    if (!string.IsNullOrEmpty(user.FirstName))
-                        displayName = user.FirstName + (string.IsNullOrEmpty(user.LastName) ? "" : " " + user.LastName);
-                    else
-                        displayName = user.UserName ?? "Użytkownik";
-                }
-
-                return new
-                {
-                    Rank = index + 1,
-                    UserName = displayName,
-                    AvatarUrl = userExists ? user.AvatarUrl : null,
-                    TotalDistanceKm = Math.Round(r.TotalDistance / 1000.0, 2),
-                    r.ActivityCount,
-                    r.TotalDuration
-                };
-            });
-
-            return Ok(leaderboard);
-        }
 
         [HttpGet("{id}/gpx")]
         public async Task<IActionResult> ExportGpx(Guid id)
@@ -226,9 +176,46 @@ namespace ActivityTracker.Controllers
 
             return File(fileBytes, "application/gpx+xml", fileName);
         }
+
+        [HttpGet("leaderboard")]
+        public async Task<IActionResult> GetLeaderboard()
+        {
+            var startDate = DateTime.UtcNow.AddDays(-30);
+
+            var leaderboard = await _db.Activities
+                .Where(a => a.StartedAt >= startDate)
+                .Join(_db.Users,
+                    activity => activity.UserId,
+                    user => user.Id,
+                    (activity, user) => new { activity, user })
+                .GroupBy(x => new { x.user.Id, x.user.UserName })
+                .Select(g => new
+                {
+                    UserName = g.Key.UserName ?? "User",
+                    TotalDistanceKm = Math.Round(g.Sum(x => x.activity.DistanceMeters) / 1000, 1),
+                    ActivityCount = g.Count()
+                })
+                .OrderByDescending(x => x.TotalDistanceKm)
+                .Take(50)
+                .ToListAsync();
+
+            var result = leaderboard.Select((item, index) => new
+            {
+                Position = index + 1,
+                item.UserName,
+                item.TotalDistanceKm,
+                item.ActivityCount
+            }).ToList();
+
+            return Ok(new
+            {
+                Period = "30 dni",
+                Updated = DateTime.Now.ToString("yyyy-MM-dd HH:mm"),
+                Ranking = result
+            });
+        }
+
     }
-
-
 
     public class SaveActivityRequest
     {
