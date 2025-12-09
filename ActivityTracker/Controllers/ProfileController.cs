@@ -1,9 +1,11 @@
-﻿using System.Security.Claims;
+﻿using ActivityTracker.Data;
 using ActivityTracker.DTOs;
 using ActivityTracker.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace ActivityTracker.Controllers;
 
@@ -13,12 +15,17 @@ namespace ActivityTracker.Controllers;
 public class ProfileController : ControllerBase
 {
     private readonly UserManager<ApplicationUser> _userManager;
-    private readonly IWebHostEnvironment _environment; 
+    private readonly IWebHostEnvironment _environment;
+    private readonly ApplicationDbContext _db;
 
-    public ProfileController(UserManager<ApplicationUser> userManager, IWebHostEnvironment environment)
+    public ProfileController(
+        UserManager<ApplicationUser> userManager,
+        IWebHostEnvironment environment,
+        ApplicationDbContext db) 
     {
         _userManager = userManager;
         _environment = environment;
+        _db = db; 
     }
 
     private async Task<ApplicationUser?> GetCurrentUserAsync()
@@ -40,6 +47,17 @@ public class ProfileController : ControllerBase
             return NotFound("User not found.");
         }
 
+        var stats = await _db.Activities
+            .Where(a => a.UserId == user.Id)
+            .GroupBy(x => 1) 
+            .Select(g => new
+            {
+                TotalDistance = g.Sum(x => x.DistanceMeters),
+                TotalDuration = g.Sum(x => x.DurationSeconds),
+                Count = g.Count()
+            })
+            .FirstOrDefaultAsync();
+
         var profileDto = new ProfileDto
         {
             UserName = user.UserName,
@@ -50,7 +68,10 @@ public class ProfileController : ControllerBase
             Gender = user.Gender,
             Height = user.Height,
             Weight = user.Weight,
-            AvatarUrl = user.AvatarUrl
+            AvatarUrl = user.AvatarUrl,
+            TotalDistanceKm = stats != null ? Math.Round(stats.TotalDistance / 1000.0, 2) : 0,
+            TotalActivities = stats?.Count ?? 0,
+            TotalDurationSeconds = stats?.TotalDuration ?? 0
         };
 
         return Ok(profileDto);

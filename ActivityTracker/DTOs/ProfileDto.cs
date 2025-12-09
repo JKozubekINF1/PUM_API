@@ -2,7 +2,7 @@
 
 public class ProfileDto
 {
-    public string? UserName { get; set; } // <--- Dodane
+    public string? UserName { get; set; } 
     public string? FirstName { get; set; }
     public string? LastName { get; set; }
     public string? Email { get; set; }
@@ -11,4 +11,8 @@ public class ProfileDto
     public double? Height { get; set; }
     public double? Weight { get; set; }
     public string? AvatarUrl { get; set; }
+
+    public double TotalDistanceKm { get; set; }
+    public int TotalActivities { get; set; }
+    public double TotalDurationSeconds { get; set; }
 }

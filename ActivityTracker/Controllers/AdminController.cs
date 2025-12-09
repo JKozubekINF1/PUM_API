@@ -22,7 +22,6 @@ namespace ActivityTracker.Controllers
             _userManager = userManager;
         }
 
-        // 1. Lista użytkowników + licznik aktywności
         [HttpGet("users")]
         public async Task<ActionResult<IEnumerable<AdminUserDto>>> GetUsers()
         {
@@ -47,7 +46,6 @@ namespace ActivityTracker.Controllers
             return Ok(users);
         }
 
-        // 2. USUWANIE UŻYTKOWNIKA
         [HttpDelete("users/{id}")]
         public async Task<IActionResult> DeleteUser(string id)
         {
@@ -72,7 +70,6 @@ namespace ActivityTracker.Controllers
             return NoContent();
         }
 
-        // 3. Lista aktywności z filtrowaniem
         [HttpGet("activities")]
         public async Task<ActionResult<IEnumerable<AdminActivityDto>>> GetActivities(
             [FromQuery] string? userId,
@@ -85,31 +82,25 @@ namespace ActivityTracker.Controllers
                         join u in _db.Users on a.UserId equals u.Id
                         select new { Activity = a, User = u };
 
-            // Filtrowanie (bez zmian)
             if (!string.IsNullOrEmpty(userId)) query = query.Where(x => x.Activity.UserId == userId);
             if (dateFrom.HasValue) query = query.Where(x => x.Activity.StartedAt >= dateFrom.Value);
             if (dateTo.HasValue) query = query.Where(x => x.Activity.StartedAt <= dateTo.Value);
             if (!string.IsNullOrEmpty(activityType)) query = query.Where(x => x.Activity.ActivityType == activityType);
             if (minDistance.HasValue) query = query.Where(x => x.Activity.DistanceMeters >= minDistance.Value);
 
-            // Sortowanie
             query = query.OrderByDescending(x => x.Activity.StartedAt);
 
-            // Mapowanie na nowe DTO
             var result = await query.Select(x => new AdminActivityDto
             {
                 Id = x.Activity.Id,
                 UserId = x.User.Id,
                 UserName = x.User.UserName ?? "Nieznany",
-                UserAvatarUrl = x.User.AvatarUrl,
-
+                UserAvatarUrl = x.User.AvatarUrl,  
                 Title = x.Activity.Title,
                 ActivityType = x.Activity.ActivityType,
                 DistanceMeters = x.Activity.DistanceMeters,
                 DurationSeconds = x.Activity.DurationSeconds,
                 StartedAt = x.Activity.StartedAt,
-
-                // Nowe pola
                 EndedAt = x.Activity.EndedAt,
                 AverageSpeedMs = x.Activity.AverageSpeedMs,
                 MaxSpeedMs = x.Activity.MaxSpeedMs,
@@ -120,7 +111,6 @@ namespace ActivityTracker.Controllers
             return Ok(result);
         }
 
-        // 4. Usuwanie aktywności
         [HttpDelete("activities/{id}")]
         public async Task<IActionResult> DeleteActivity(Guid id)
         {
@@ -136,7 +126,6 @@ namespace ActivityTracker.Controllers
             return NoContent();
         }
 
-        // 5. Statystyki globalne
         [HttpGet("stats")]
         public async Task<ActionResult<AdminStatsDto>> GetStatistics()
         {
@@ -150,8 +139,8 @@ namespace ActivityTracker.Controllers
             {
                 TotalUsers = totalUsers,
                 TotalActivities = totalActivities,
-                TotalDistanceKm = Math.Round(totalDistance / 1000.0, 2), // Konwersja na km
-                TotalDurationHours = Math.Round(totalDuration / 3600.0, 2) // Konwersja na godziny
+                TotalDistanceKm = Math.Round(totalDistance / 1000.0, 2), 
+                TotalDurationHours = Math.Round(totalDuration / 3600.0, 2) 
             });
         }
     }
