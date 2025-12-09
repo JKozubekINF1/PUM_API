@@ -29,7 +29,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
         policy => policy
-            .WithOrigins("http://localhost:5173", "https://srv101211.seohost.com.pl" , "http://srv101211.seohost.com.pl")
+            .WithOrigins("http://localhost:5173", "https://srv101211.seohost.com.pl" , "http://srv101211.seohost.com.pl", "https://www.srv101211.seohost.com.pl")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials());
