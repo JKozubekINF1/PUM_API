@@ -175,3 +175,4 @@ C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Release\net9.0\refin
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Release\net9.0\ActivityTracker.pdb
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Release\net9.0\ActivityTracker.genruntimeconfig.cache
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Release\net9.0\ref\ActivityTracker.dll
+C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\bin\Release\net9.0\ActivityTracker.staticwebassets.runtime.json

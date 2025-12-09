@@ -25,5 +25,7 @@ namespace ActivityTracker.Models
         public string? RouteGeoJson { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public string? PhotoUrl { get; set; }
     }
 }

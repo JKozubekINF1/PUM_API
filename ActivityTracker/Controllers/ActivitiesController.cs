@@ -1,7 +1,7 @@
 ﻿using ActivityTracker.Data;
 using ActivityTracker.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity; 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NetTopologySuite.Geometries;
@@ -9,8 +9,6 @@ using NetTopologySuite.IO;
 using System.Security.Claims;
 using System.Text;
 using System.Globalization;
-using Microsoft.Data.SqlClient;
-using System.Data;
 
 namespace ActivityTracker.Controllers
 {
@@ -21,11 +19,16 @@ namespace ActivityTracker.Controllers
     {
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IWebHostEnvironment _environment;
 
-        public ActivitiesController(ApplicationDbContext db, UserManager<ApplicationUser> userManager)
+        public ActivitiesController(
+            ApplicationDbContext db,
+            UserManager<ApplicationUser> userManager,
+            IWebHostEnvironment environment) 
         {
             _db = db;
             _userManager = userManager;
+            _environment = environment;
         }
 
         [HttpPost]
@@ -66,14 +69,13 @@ namespace ActivityTracker.Controllers
             return Ok(new { Id = activity.Id, Message = "Activity saved successfully!" });
         }
 
-
         [HttpGet("history")]
         public async Task<IActionResult> GetHistory()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
 
             var activities = await _db.Activities
-                .Where(a => a.UserId == userId) 
+                .Where(a => a.UserId == userId)
                 .OrderByDescending(a => a.StartedAt)
                 .Select(a => new
                 {
@@ -84,7 +86,7 @@ namespace ActivityTracker.Controllers
                     a.DurationSeconds,
                     a.DistanceMeters,
                     a.AverageSpeedMs,
-
+                    a.PhotoUrl 
                 })
                 .ToListAsync();
 
@@ -97,7 +99,7 @@ namespace ActivityTracker.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
 
             var activity = await _db.Activities
-                .Where(a => a.Id == id && a.UserId == userId) 
+                .Where(a => a.Id == id && a.UserId == userId)
                 .Select(a => new
                 {
                     a.Id,
@@ -110,7 +112,8 @@ namespace ActivityTracker.Controllers
                     a.DistanceMeters,
                     a.AverageSpeedMs,
                     a.MaxSpeedMs,
-                    a.RouteGeoJson 
+                    a.RouteGeoJson,
+                    a.PhotoUrl 
                 })
                 .FirstOrDefaultAsync();
 
@@ -120,6 +123,43 @@ namespace ActivityTracker.Controllers
             return Ok(activity);
         }
 
+        [HttpPost("{id}/photo")]
+        public async Task<IActionResult> UploadActivityPhoto(Guid id, IFormFile file)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+            var activity = await _db.Activities
+                .FirstOrDefaultAsync(a => a.Id == id && a.UserId == userId);
+
+            if (activity == null)
+                return NotFound("Nie znaleziono aktywności lub brak dostępu.");
+
+            if (file == null || file.Length == 0)
+                return BadRequest("Nie przesłano pliku.");
+
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png" };
+            var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
+            if (!allowedExtensions.Contains(extension))
+                return BadRequest("Tylko pliki .jpg, .jpeg, .png są dozwolone.");
+
+            string uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads", "activity-photos");
+            if (!Directory.Exists(uploadsFolder))
+                Directory.CreateDirectory(uploadsFolder);
+
+            string uniqueFileName = $"{activity.Id}_{Guid.NewGuid()}{extension}";
+            string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            var photoUrl = $"{Request.Scheme}://{Request.Host}/uploads/activity-photos/{uniqueFileName}";
+
+            activity.PhotoUrl = photoUrl;
+            _db.Activities.Update(activity);
+            await _db.SaveChangesAsync();
+
+            return Ok(new { Url = photoUrl, Message = "Zdjęcie aktywności dodane pomyślnie." });
+        }
 
         [HttpGet("{id}/gpx")]
         public async Task<IActionResult> ExportGpx(Guid id)
@@ -160,8 +200,8 @@ namespace ActivityTracker.Controllers
 
             foreach (var coord in coordinates)
             {
-                string lat = coord.Y.ToString(CultureInfo.InvariantCulture); 
-                string lon = coord.X.ToString(CultureInfo.InvariantCulture); 
+                string lat = coord.Y.ToString(CultureInfo.InvariantCulture);
+                string lon = coord.X.ToString(CultureInfo.InvariantCulture);
 
                 sb.AppendLine($"      <trkpt lat=\"{lat}\" lon=\"{lon}\">");
                 sb.AppendLine("      </trkpt>");
@@ -214,7 +254,6 @@ namespace ActivityTracker.Controllers
                 Ranking = result
             });
         }
-
     }
 
     public class SaveActivityRequest

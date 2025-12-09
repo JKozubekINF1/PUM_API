@@ -49,6 +49,27 @@
   },
   {
     "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
+    "Method": "UploadActivityPhoto",
+    "RelativePath": "api/Activities/{id}/photo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ActivityTracker.Controllers.ActivitiesController",
     "Method": "GetHistory",
     "RelativePath": "api/Activities/history",
     "HttpMethod": "GET",

@@ -56,6 +56,9 @@ namespace ActivityTracker.Migrations
                     b.Property<double?>("MaxSpeedMs")
                         .HasColumnType("float");
 
+                    b.Property<string>("PhotoUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RouteGeoJson")
                         .HasColumnType("nvarchar(max)");
 

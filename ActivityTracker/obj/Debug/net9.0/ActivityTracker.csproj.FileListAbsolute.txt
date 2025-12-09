@@ -345,10 +345,11 @@ C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticw
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticwebassets.development.json
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\Activity.309B09C8.Up2Date
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\ActivityTracker.dll
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\refint\ActivityTracker.dll
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\ActivityTracker.pdb
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\ActivityTracker.genruntimeconfig.cache
 C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\ref\ActivityTracker.dll
+C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\tytaj\Documents\GitHub\PUM_API\ActivityTracker\bin\Debug\net9.0\ActivityTracker.staticwebassets.runtime.json
