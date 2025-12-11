@@ -40,7 +40,7 @@ namespace ActivityTracker.Controllers
             if (request.Route?.Count >= 2)
             {
                 var coordinates = request.Route
-                    .Select(p => new Coordinate(p[0], p[1]))
+                    .Select(p => new Coordinate(p[1], p[0]))
                     .ToArray();
 
                 var factory = NetTopologySuite.NtsGeometryServices.Instance.CreateGeometryFactory(4326);
@@ -217,7 +217,7 @@ namespace ActivityTracker.Controllers
             sb.AppendLine("</gpx>");
 
             var fileBytes = Encoding.UTF8.GetBytes(sb.ToString());
-            var fileName = $"{activity.ActivityType}_{activity.StartedAt:yyyy-MM-dd}.gpx";
+            var fileName = $"{activity.ActivityType}_{activity.StartedAt:yyyy-MM-dd_HH-mm}.gpx";
 
             return File(fileBytes, "application/gpx+xml", fileName);
         }
