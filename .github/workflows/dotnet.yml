@@ -8,23 +8,29 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+
+    # --- TO JEST KLUCZOWA ZMIANA ---
+    # Ustawiamy domyślny katalog roboczy na folder z Twoim projektem.
+    # Upewnij się, że w repozytorium folder nazywa się dokładnie "ActivityTracker"
+    defaults:
+      run:
+        working-directory: ./ActivityTracker
+    # -------------------------------
 
     steps:
     - uses: actions/checkout@v4
-
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x 
-
+        dotnet-version: 9.0.x
+        
     - name: Restore dependencies
-
       run: dotnet restore
-
+      
     - name: Build
-      run: dotnet restore ActivityTracker/ActivityTracker.sln
-
+      run: dotnet build --no-restore
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
