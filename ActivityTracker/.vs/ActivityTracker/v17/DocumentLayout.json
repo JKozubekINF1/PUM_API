@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\activitytracker.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:activitytracker.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\activitiestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,7 +35,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,67 +43,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProfileTests.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
-              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ProfileTests.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
-              "RelativeToolTip": "..\\ActivityTracker.Tests\\ProfileTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T20:47:10.971Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProfileController.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
-              "RelativeToolTip": "Controllers\\ProfileController.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAADwv5oAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T20:46:26.56Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ActivitiesTests.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
-              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
-              "RelativeToolTip": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T20:43:07.37Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ActivitiesController.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ActivitiesController.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
-              "RelativeToolTip": "Controllers\\ActivitiesController.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAAAIwBIBAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T20:42:29.492Z",
+              "Title": "ActivityTracker",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
+              "RelativeDocumentMoniker": "ActivityTracker.csproj",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\ActivityTracker.csproj",
+              "RelativeToolTip": "ActivityTracker.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-12T10:00:15.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthTests.cs",
-              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\AuthTests.cs",
-              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\AuthTests.cs",
-              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\AuthTests.cs",
-              "RelativeToolTip": "..\\ActivityTracker.Tests\\AuthTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T20:38:17.727Z",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-12T10:00:14.051Z",
               "EditorCaption": ""
             },
             {
@@ -109,6 +78,67 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProfileTests.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
+              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ProfileTests.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
+              "RelativeToolTip": "..\\ActivityTracker.Tests\\ProfileTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:47:10.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProfileController.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ProfileController.cs",
+              "RelativeToolTip": "Controllers\\ProfileController.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAADwv5oAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:46:26.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ActivitiesTests.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
+              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
+              "RelativeToolTip": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:43:07.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ActivitiesController.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ActivitiesController.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\Controllers\\ActivitiesController.cs",
+              "RelativeToolTip": "Controllers\\ActivitiesController.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAIwBIBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:42:29.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthTests.cs",
+              "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\AuthTests.cs",
+              "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\AuthTests.cs",
+              "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\AuthTests.cs",
+              "RelativeToolTip": "..\\ActivityTracker.Tests\\AuthTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:38:17.727Z"
             }
           ]
         }

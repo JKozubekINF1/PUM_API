@@ -3,13 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\profiletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\activitiestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\authtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\activitiestests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D5E80AC-1EDE-4BF9-9C32-0CE6D0081FB9}|..\\ActivityTracker.Tests\\ActivityTracker.Tests.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker.tests\\profiletests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE922E42-717C-9960-FD68-D8F5996C5779}|ActivityTracker.csproj|c:\\users\\tytaj\\documents\\github\\pum_api\\activitytracker\\controllers\\profilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,7 +27,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,13 +35,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ProfileTests.cs",
               "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
               "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ProfileTests.cs",
               "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ProfileTests.cs",
               "RelativeToolTip": "..\\ActivityTracker.Tests\\ProfileTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T20:47:10.971Z",
               "EditorCaption": ""
@@ -61,13 +61,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ActivitiesTests.cs",
               "DocumentMoniker": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
               "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
               "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\ActivitiesTests.cs",
               "RelativeToolTip": "..\\ActivityTracker.Tests\\ActivitiesTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T20:43:07.37Z",
               "EditorCaption": ""
@@ -93,7 +93,7 @@
               "RelativeDocumentMoniker": "..\\ActivityTracker.Tests\\AuthTests.cs",
               "ToolTip": "C:\\Users\\tytaj\\Documents\\GitHub\\PUM_API\\ActivityTracker.Tests\\AuthTests.cs",
               "RelativeToolTip": "..\\ActivityTracker.Tests\\AuthTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T20:38:17.727Z",
               "EditorCaption": ""
